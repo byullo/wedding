@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>카톡 공유</title>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
+<script type="text/javascript">
+    function sendLinkCustom() {
+        Kakao.init("70a97bcc2c2c53f407e8b96fb82d8656");
+        Kakao.Link.sendCustom({
+            templateId: [templete id]
+        });
+    }
+</script>
+
+<script>
+try {
+  function sendLinkDefault() {
+    Kakao.init('[Javascript API key]')
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '한지성 곽미현 결혼식에 초대합니다',
+        description: '#청첩장 #10월5일 #라도무스 #오후12',
+        imageUrl:
+          'https://ibb.co/d6KpWBG',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      social: {
+        likeCount: 999,
+        commentCount: 999,
+        sharedCount: 999,
+      },
+      buttons: [
+        {
+          title: '한지성 곽미현 결혼식에 초대합니다',
+          link: {
+            mobileWebUrl: 'https://www.barunsonmcard.com/m/mybbqv545555',
+            webUrl: 'https://www.barunsonmcard.com/m/mybbqv545555',
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://www.barunsonmcard.com/m/mybbqv545555',
+            webUrl: 'https://www.barunsonmcard.com/m/mybbqv545555',
+          },
+        },
+      ],
+    })
+  }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+</script>
+   
+</body>
+</html>
